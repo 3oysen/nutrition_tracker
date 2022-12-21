@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.sass";
+import "./_Login.sass";
 
 function Login() {
 	return (
