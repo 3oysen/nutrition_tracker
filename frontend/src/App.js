@@ -8,7 +8,7 @@ function App() {
 	return (
 		<>
 			<Router>
-				<div className="container">
+				<div className="main_container">
 					<Routes>
 						<Route path="/home" element={<Home />} />
 						<Route path="/login" element={<Login />} />
