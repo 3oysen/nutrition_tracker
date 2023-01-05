@@ -1,14 +1,12 @@
-function Login() {
+function Signup() {
 	return (
 		<>
 			<div className="container">
 				<div className="left-panel">
 					<div className="login-section">
 						<div className="login-header">
-							<p className="lg">Welcome back</p>
-							<p className="details-description">
-								Welcome back! Please enter your details.
-							</p>
+							<p className="lg">Welcome</p>
+							<p className="details-description">Please enter your details.</p>
 						</div>
 
 						<div className="input-section">
@@ -18,22 +16,18 @@ function Login() {
 							<input type="password" placeholder="Enter your password" />
 						</div>
 
-						<div className="forgot-section">
-							<h5>Forgot password?</h5>
-						</div>
-
 						<div className="sing-button-section">
 							<button type="submit" class="sing-btn">
-								<span>Sign in</span>
+								<span>Sign up</span>
 							</button>
 							<button type="submit" class="sing-btn">
-								<span>Sign in with Google</span>
+								<span>Sign up with Google</span>
 							</button>
 						</div>
 
 						<div className="unregistered-section">
-							<p>Don't have an account?</p>
-							<p className="sing-up-link">Sign up</p>
+							<p>Do you have an account?</p>
+							<p className="sing-up-link">Sign in</p>
 						</div>
 					</div>
 				</div>
@@ -43,4 +37,4 @@ function Login() {
 	);
 }
 
-export default Login;
+export default Signup;

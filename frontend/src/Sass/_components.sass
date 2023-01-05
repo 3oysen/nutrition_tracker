@@ -1,0 +1,29 @@
+// Components: anything reusable such as buttons, navbars, cards etc.
+
+@mixin btn
+    display: flex
+    justify-content: center
+    width: 100%
+    margin: 10px 0
+    border-radius: 4px
+    padding: 10px
+    font-size: 18px
+    background-color: $secondary-color
+    color: $bgc-color
+    cursor: pointer
+
+.sing-btn
+    @include btn
+
+input
+    background-color: $bgc-shadow-color
+    display: block
+    height: 50px
+    width: 100%
+    border-radius: 4px
+    font-size: 14px
+    input:hover
+        background-color: $bgc-color
+        transition: 0.3s
+    input:focus
+        background-color: $bgc-color
