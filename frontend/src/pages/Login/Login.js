@@ -22,18 +22,18 @@ function Login() {
 							<h5>Forgot password?</h5>
 						</div>
 
-						<div className="sing-button-section">
-							<button type="submit" class="sing-btn">
+						<div className="sign-button-section">
+							<button type="submit" class="sign-btn">
 								<span>Sign in</span>
 							</button>
-							<button type="submit" class="sing-btn">
+							<button type="submit" class="sign-btn">
 								<span>Sign in with Google</span>
 							</button>
 						</div>
 
 						<div className="unregistered-section">
 							<p>Don't have an account?</p>
-							<p className="sing-up-link">Sign up</p>
+							<p className="sign-up-link">Sign up</p>
 						</div>
 					</div>
 				</div>

@@ -1,5 +1,18 @@
 // Components: anything reusable such as buttons, navbars, cards etc.
 
+input
+    background-color: $bgc-shadow-color
+    box-sizing: border-box
+    height: 50px
+    width: 100%
+    font-size: 14px
+    border-style: hidden
+input:hover
+    background-color: $bgc-color
+    transition: 0.3s
+input:focus
+    background-color: $bgc-color
+
 @mixin btn
     display: block
     justify-content: center
@@ -10,20 +23,15 @@
     border-style: hidden
     background-color: $secondary-color
     color: $bgc-color
-    cursor: pointer
+    transition: 0.1s
+    cursor pointer
+    font-weight: bold
+    &:hover
+        transform: scale(1.01)
+    &:active
+        transform: scale(0.99)
+        transition: transform 0.1s ease-in-out
+        box-shadow: inset 0px 0px 5px #c1c1c1
 
-.sing-btn
+.sign-btn
     @include btn
-
-input
-    background-color: $bgc-shadow-color
-    box-sizing: border-box
-    height: 50px
-    width: 100%
-    font-size: 14px
-    border-style: hidden
-    input:hover
-        background-color: $bgc-color
-        transition: 0.3s
-    input:focus
-        background-color: $bgc-color
