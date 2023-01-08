@@ -1,3 +1,5 @@
+import RightPanel from "../../components/RightPanel";
+
 function Login() {
 	return (
 		<>
@@ -37,7 +39,7 @@ function Login() {
 						</div>
 					</div>
 				</div>
-				<div className="right-panel">right-panel</div>
+				<RightPanel />
 			</div>
 		</>
 	);
