@@ -1,5 +1,6 @@
 import RightPanel from "../../components/RightPanel";
 import { useFormik } from "formik";
+import logo from "../../images/logo.png";
 
 const validate = (values) => {
 	const errors = {};
@@ -37,6 +38,9 @@ const Signup = () => {
 		<>
 			<div className="container">
 				<div className="left-panel">
+					<div className="logo">
+						<img src={logo} width="300px" height="107px" alt="" />
+					</div>
 					<div className="login-section">
 						<div className="login-header">
 							<p className="lg">Welcome</p>
