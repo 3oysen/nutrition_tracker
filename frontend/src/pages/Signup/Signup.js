@@ -1,6 +1,14 @@
 import RightPanel from "../../components/RightPanel";
+import { useFormik } from "formik";
 
-function Signup() {
+const Signup = () => {
+	const formik = useFormik({
+		initialValues: { name: "", email: "", password: "" },
+		onSubmit: (values) => {
+			alert(JSON.stringify(values, null, 2));
+		},
+	});
+
 	return (
 		<>
 			<div className="container">
@@ -11,23 +19,45 @@ function Signup() {
 							<p className="details-description">Please enter your details.</p>
 						</div>
 
-						<div className="input-section">
+						<form onSubmit={formik.handleSubmit} className="input-section">
 							<h5>Name</h5>
-							<input type="email" placeholder="Enter your name" />
+							<input
+								id="name"
+								name="name"
+								type="text"
+								onChange={formik.handleChange}
+								value={formik.values.name}
+								placeholder="Enter your name"
+							/>
 							<h5>Email</h5>
-							<input type="email" placeholder="Enter your email" />
-							<h5>Password</h5>
-							<input type="password" placeholder="Enter your password" />
-						</div>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								onChange={formik.handleChange}
+								value={formik.values.email}
+								placeholder="Enter your email"
+							/>
 
-						<div className="sign-button-section">
-							<button type="submit" class="sign-btn">
-								<span>Sign up</span>
-							</button>
-							<button type="submit" class="sign-btn">
-								<span>Sign up with Google</span>
-							</button>
-						</div>
+							<h5>Password</h5>
+							<input
+								id="password"
+								name="password"
+								type="password"
+								onChange={formik.handleChange}
+								value={formik.values.password}
+								placeholder="Enter your password"
+							/>
+
+							<div className="sign-button-section">
+								<button type="submit" class="sign-btn">
+									<span>Sign up</span>
+								</button>
+								<button type="submit" class="sign-btn">
+									<span>Sign up with Google</span>
+								</button>
+							</div>
+						</form>
 
 						<div className="unregistered-section">
 							<p>Do you have an account?</p>
@@ -39,6 +69,6 @@ function Signup() {
 			</div>
 		</>
 	);
-}
+};
 
 export default Signup;
