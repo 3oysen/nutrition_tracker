@@ -1,30 +1,37 @@
-import React, { useState } from "react";
-import { SliderData } from "./SliderData";
+import { useState, useEffect } from "react";
 
-const ImageSlider = ({ slides }) => {
-	const [current, setCurrent] = useState(0);
-	const length = slides.length;
+function importAll(r) {
+	return r.keys().map(r);
+}
 
-	const nextSlide = () => {
-		setCurrent(current === current + 1);
-	};
+const ImageSlider = () => {
+	const images = importAll(
+		require.context("../images/login", false, /\.(png|jpe?g|svg)$/)
+	);
 
-	if (!Array.isArray(slides) || slides.length <= 0) {
-		return null;
+	function getRandomItem(arr) {
+		const randomIndex = Math.floor(Math.random() * arr.length);
+		const item = arr[randomIndex];
+		return item;
 	}
-	// setInterval(nextSlide, 1000);
-	// console.log("hello");
+
+	const [image, setImage] = useState(getRandomItem(images));
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setImage(getRandomItem(images));
+		}, 5000);
+
+		return () => clearInterval(interval);
+	});
+
+	console.log(image);
 
 	return (
 		<>
-			{SliderData.map((slide, index) => {
-				return (
-					<div key={index}>
-						<img src={slide.image} alt="" width="300px" />
-					</div>
-				);
-			})}
-			;
+			<div>
+				<img src={image} alt="" width="500px" />
+			</div>
 		</>
 	);
 };
